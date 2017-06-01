@@ -1,0 +1,63 @@
+//- creating my own boilderplate 
+doctype
+html(lang="en")
+  head
+    //- to show you're inserting something
+    title Merry Christmas
+    
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content='width=device-width,initial-scale=1.0')
+    meta(name='dscription', content=MetaDesc )
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style", content="black")
+    meta(name="mobile-web-app-capable", content="yes")
+    link(href='css/style_hannah.css',rel='stylesheet',type='text/css')
+      
+    
+  body
+    
+    div.portrait
+      | You've got a greeting card!
+      div.small
+        | turn your device to the side!
+      div.rotate
+        img(src="img/rotate.png")
+    
+    div.smallerthanipad
+      | You need a bigger screen
+      div.small
+        | Get out your ipad out and see it on there
+        
+    div.container
+    
+      div.bigbutton
+    
+      
+      
+      div.card
+        
+        .backenvelope
+        //.backenvelope.stage4
+        .backenvelopecover_back
+        //.backenvelopecover_back.stage3a.stage4
+        .centercard
+          .signature
+          .pic1
+          .pic2
+        .centercardflap
+          .cardflapleft
+          //.cardflapleft.stage5a
+          .cardflapright
+          //.cardflapright.stage5b
+        
+        .backenvelopeface
+        //.backenvelopeface.stage4
+        .backenvelopecover
+        //.backenvelopecover.stage3b
+        .frontenvelope
+      
+          
+    script( src='//code.jquery.com/jquery-1.11.3.min.js')
+    script( src='js/main_hannah.js')
+    

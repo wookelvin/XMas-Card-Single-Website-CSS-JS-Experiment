@@ -1,0 +1,329 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Amatic+SC);
+$font2: "Amatic SC","Open Sans", sans-serif;
+body{
+  background-color:#F66565;
+  
+}
+body,div{
+  margin:0;
+  padding:0;
+  //transform-style: flat;
+}
+.bigbutton{
+  //background-color:yellow;
+  z-index:1000;
+  opacity:0.5;
+  display:block;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  position: fixed;
+  cursor:pointer;
+}
+.container{
+  width:100vw;
+  height:100vh;
+  left:0;
+  top:0;
+  position:relative;
+  perspective: 1000px;
+  overflow: hidden;
+  //transform-style: flat;
+}
+$env_w: 1004.6px;
+$env_h: 530.1px;
+$cover_h: 291.4px;
+$paper_h: 503.6px;
+$flapl_w: 546.5px;
+$flapr_w: 366.3px;
+
+.card{
+  top:-$cover_h+30px;
+  position:absolute;
+  left:50%;
+  //transform-style: flat;
+}
+.frontenvelope,
+.centercard,
+.centercardflap,
+.backenvelope,
+.backenvelopeface,
+.backenvelopecover,
+.backenvelopecover_back{
+  display:block;
+  position:absolute;
+  //background-size:cover;
+  left:50%;
+  backface-visibility: hidden;
+  transition:transform 1s ease;
+  //transform-style: flat;
+}
+.frontenvelope{
+  height:$env_h;
+  width:$env_w;
+  background: url(../img/hannah_front.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  top:$cover_h;
+  margin-left:-$env_w/2;
+  //opacity:0.2;
+}
+
+.backenvelope{
+  height:$env_h+1;
+  width:$env_w;
+  top:$cover_h; 
+  margin-left:-$env_w/2;  
+ 
+  background: url(../img/hannah_back_envelope_back.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  //background-size:
+}
+.backenvelopeface{
+  height:$env_h+1;
+  width:$env_w;
+  top:$cover_h; 
+  margin-left:-$env_w/2;  
+ 
+  background: url(../img/hannah_back_envelope.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  //background-size:
+}
+
+.backenvelopecover{
+  height:$cover_h;
+  width:$env_w;
+  top:$cover_h; 
+  margin-left:-$env_w/2;  
+  transform-origin: center top;
+
+  background: url(../img/hannah_back_envelope_cover_closed.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  //background-size:
+}
+
+.backenvelopecover_back{
+  height:$cover_h;
+  width:$env_w;
+  top:2px; 
+  margin-left:-$env_w/2;  
+  background: url(../img/hannah_back_envelope_cover_open.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  transform-origin:bottom center;
+  transform:rotateX(180deg);
+}
+.centercard{
+  height:$paper_h;
+  width:$env_w;
+  top:$cover_h + $env_h - $paper_h; 
+  margin-left:-$env_w/2;  
+ 
+  background: url(../img/hannah_card_inside.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  //background-size:
+}
+.signature{
+  background:url(../img/signature.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width:150px;
+  height:150px;
+  position:absolute;
+  top:310px;
+  left:40px;
+}
+
+.pic1{
+  background:url(../img/IMG_3072.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+  width:270px;
+  height:270px/3*2;
+  border:5px solid white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background-color:white;
+  position:absolute;
+  top:280px;
+  left:200px;
+  transform: rotateZ(5deg);
+}
+
+.pic2{
+  background:url(../img/img2.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+  width:250px;
+  height:250px/7*5.25;
+  border:5px solid white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background-color:white;
+  position:absolute;
+  top:30px;
+  left:730px;
+  //transform: rotateZ(5deg);
+}
+
+.centercardflap{
+  height:$paper_h;
+  width:$env_w;
+  top:$cover_h + $env_h - $paper_h; 
+  margin-left:-$env_w/2;  
+  perspective:800px;
+ 
+  //background: url(../img/hannah_card_inside.svg);
+  //background-size:
+}
+.cardflapleft{
+  width:$flapl_w;
+  height:$paper_h;
+  float:left;
+  background: url(../img/hannah_card_left.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  transform-origin: left center;
+//  transform:rotateY(-135deg);
+  transition:transform 1s ease;
+}
+.cardflapright{
+  width:$flapr_w;
+  height:$paper_h;
+  float:right;
+  background: url(../img/hannah_card_right.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  transform-origin: right center;
+  transition:transform 1s ease;
+}
+
+.backenvelope{
+  transform:rotateY(-180deg) translateZ(-0.10px); 
+}
+.backenvelope_back{
+  transform:rotateY(-180deg) translateZ(-0.10px); 
+}
+.centercard{
+  transform:rotateY(-180deg) translateZ(-0.08px); 
+}
+.centercardflap{
+  transform:rotateY(-180deg) translateZ(-0.06px);
+}
+.backenvelopeface{
+  transform:rotateY(-180deg) translateZ(-0.04px); 
+}
+.backenvelopecover{
+  transform:rotateY(-180deg) translateZ(-0.02px);  
+}
+
+.stage1{
+  transform:rotateY(180deg);
+}
+.stage1b1{
+  transform:rotateY(0deg) translateZ(-0.10px);
+}
+
+.stage1b2{
+  transform:rotateY(0deg) translateZ(-0.08px);
+}
+.stage1b3{
+  transform:rotateY(0deg) translateZ(-0.06px);
+}
+.stage1b4{
+  transform:rotateY(0deg) translateZ(-0.04px);
+}
+.stage1b5{
+  transform:rotateY(0deg) translateZ(-0.02px);
+}
+
+.stage3a{
+  transform:rotateX(360deg) translateZ(-0.10px);
+}
+.stage3b{
+  transform:rotateX(180deg) translateZ(-0.02px);
+}
+.stage4a{
+  transform:translateY(600px)  translateZ(-0.10px);
+}
+.stage4b{
+  transform:translateY(600px) translateZ(-0.04px);
+}
+.stage4c{
+  transform:translateY(600px)  translateZ(-0.10px);
+}
+
+.stage5a{
+  transform:rotateY(-135deg);
+}
+.stage5b{
+  transform:rotateY(135deg);
+}
+
+
+.portrait,.smallerthanipad{
+  font-family:$font2;
+   position:fixed;
+   display:block;
+  top:0;
+  left:0;
+  height: 100%;
+  width:100%;
+  background:black;
+  z-index:5000;
+  transition:all 0.5s ease;
+  color:white;
+  font-size:60px;
+  text-align: center;
+  padding:200px 0;
+  .small{
+    font-size:50px;
+  }
+  .rotate{
+    width:50px;
+    margin:10px auto;
+  }
+}
+.smallerthanipad{
+  z-index:5001;
+}
+@media screen and (min-width:500px) {
+  .smallerthanipad{
+     opacity:0;
+    pointer-events: none;
+  }
+}
+  
+@media screen and (orientation:landscape) {
+  .portrait{
+    opacity:0;
+    pointer-events: none;
+   }
+}
+
+.backenvelope,.backenvelopecover_back{
+ z-index:10; 
+}
+.centercard{
+  z-index:20;
+}
+.centercardflap{
+  z-index:30;
+}
+.backenvelopeface{
+  z-index:40;
+}
+.backenvelopecover{
+  z-index:50;
+}
+.frontenvelope{
+  z-index:60;
+}

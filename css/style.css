@@ -1,0 +1,259 @@
+@import url(https://fonts.googleapis.com/css?family=Snowburst+One|Open+Sans|Oswald|Amatic+SC);
+body {
+  background: url("../img/background.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Snowburst One";
+  color: black;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  color: #888;
+  text-transform: uppercase;
+  font-family: "Oswald";
+  font-size: 50px;
+  text-shadow: 3px 3px 0px white, 6px 6px 0px #555;
+  letter-spacing: 5px;
+}
+
+p {
+  font-size: 25px;
+  color: darkblue;
+}
+
+body, p, div {
+  font-family: "Amatic SC", "Open Sans", sans-serif;
+}
+
+.cardcontainer {
+  position: relative;
+  max-width: 1000px;
+  margin: 25px auto;
+  perspective: 1000px;
+}
+
+.clearfix {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.postcard {
+  position: absolute;
+  width: 100%;
+  margin: 0px 0px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  vertical-align: middle;
+  transition: all 1s ease;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.message {
+  width: 45%;
+  min-height: 500px;
+  margin: 0px auto;
+  padding: 25px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.message h1 {
+  text-align: center;
+  color: tomato;
+}
+
+.message p {
+  color: darkgreen;
+}
+
+.divider {
+  background-color: black;
+  min-height: 500px;
+  width: 2px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.otherhalf {
+  min-height: 500px;
+  width: 45%;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.otherhalf .stamp {
+  background: url(../img/stamp.svg);
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 150px;
+  float: right;
+}
+
+.otherhalf .address {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  font-family: "Open Sans";
+}
+
+.otherhalf .address .addressname {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.signature {
+  width: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  padding: 15px;
+  border: 10px solid white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: all 1s ease;
+  background: url(../img/card1.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 95vh;
+}
+
+#toggle {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+#toggle:checked ~ div.cardcontainer > .card {
+  transform: rotateY(180deg);
+}
+
+#toggle:checked ~ div.cardcontainer > .postcard {
+  transform: rotateY(360deg);
+}
+
+.entire {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+}
+
+@media screen and (max-width: 800px) {
+  .cardcontainer {
+    position: relative;
+    margin: 0;
+    perspective: 1000px;
+  }
+  .card {
+    width: 93% !important;
+    max-height: 85% !important;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 25px;
+    color: black !important;
+    line-height: 22px;
+  }
+  .signature {
+    width: 90px;
+  }
+  .postcard {
+    margin: 0 auto;
+    padding: 0 5px;
+  }
+  .addressname {
+    font-size: 25px !important;
+  }
+  .stamp {
+    width: 100px !important;
+  }
+  .message {
+    padding: 0;
+  }
+  .message, .divider, .otherhalf {
+    min-height: 100vh;
+  }
+  .message {
+    width: 55%;
+  }
+  .otherhalf {
+    width: 40%;
+  }
+}
+
+.portrait {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  z-index: 500;
+  transition: all 1s ease;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  padding: 200px 0;
+}
+
+.portrait .small {
+  font-size: 23px;
+}
+
+.portrait .rotate {
+  width: 50px;
+  margin: 10px auto;
+}
+
+@media screen and (orientation: landscape) {
+  .portrait {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.seefront {
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 800;
+  color: deepskyblue;
+  text-align: center;
+  margin-top: -40px;
+}
